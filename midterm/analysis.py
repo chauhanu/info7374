@@ -110,6 +110,7 @@ def output(lst, option):
     """
     Save the output as CSV format.
     """
+    # Not sure why you need to do this.
     new_lst =[]
     for l in lst:
         new_lst.append([str(x) for x in l])
@@ -117,7 +118,7 @@ def output(lst, option):
     with open("result_" + str(option) + ".csv", 'w') as f:
         for line in new_lst:
             f.write(','.join(line) + '\n')
-
+# Do not hard code it for just two topics. Use argparse so the user can input what topics he want.
 def main():
     output(f1('python', 'pandas'), 1)
     output(f2('python'), 2)
